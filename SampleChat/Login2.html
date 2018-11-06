@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+
+<body ng-app="chat-app">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        html, body {
+            background: -webkit-linear-gradient(330deg, #000, #f0a6ca);
+            background: linear-gradient(120deg, #000, #f0a6ca);
+            overflow: hidden;
+        }
+
+        .container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            height: 106vh;
+            width: 100vw;
+        }
+
+            .container h1 {
+                margin: 0.5em auto;
+                color: #FFF;
+                text-align: center;
+            }
+
+        .login-form .btn.btn-primary {
+            background: #f0ad4e none repeat scroll 0 0;
+            border-color: #f0ad4e;
+            color: #ffffff;
+            font-size: 14px;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+        }
+
+        .back {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+            .back a {
+                color: #444444;
+                font-size: 13px;
+                text-decoration: none;
+            }
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="Scripts/jquery-1.6.4.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="signalr/hubs"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/login.js"></script>
+
+
+    <div class="text-center" style="margin:50%" ng-controller="loginController">
+        <div class="container" id="loginDiv">
+            <h1 class="form-heading">Login</h1>
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <p>Please enter your user name and password</p>
+                    </div>
+                    <form id="Login">
+                        <div class="form-group">
+
+                            <input type="text" ng-model="username" class="form-control"  id="lg_username" name="lg_username" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" ng-model="password" class="form-control" id="lg_password" name="lg_password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" ng-click="login()">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
